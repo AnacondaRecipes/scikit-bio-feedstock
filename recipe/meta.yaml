@@ -30,7 +30,8 @@ requirements:
     - python
     - pip
     - cython
-    - numpy-devel {{ numpy }}
+    - numpy-devel {{ numpy }}  # [not (osx and arm64)]
+    - numpy  {{ numpy }}       # [osx and arm64]
   run:
     - python
     - lockfile >=0.10.2
