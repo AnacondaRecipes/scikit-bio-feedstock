@@ -3,6 +3,11 @@
 {% set sha256 = "d55a83c3e5f2ca1132744e1409233fb61d9af0c5a95deb7b291e6e340712b86b" %}
 {% set build_num = "0" %}
 
+# to match scipy
+{% set numpy = "1.19" %}  # [py<=39]
+{% set numpy = "1.21" %}  # [py>39 and py<311]
+{% set numpy = "1.23" %}  # [py>=311]
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
