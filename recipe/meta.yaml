@@ -75,10 +75,12 @@ test:
     - matplotlib
     - biom-format
     - array-api-compat
+  script_env:
+    - MPLBACKEND=Agg
   commands:
     - pip check
     - python -c "from importlib.metadata import version as v; assert v('scikit-bio')=='{{ version }}'"
-    - MPLBACKEND='Agg' python -m skbio.test
+    - python -m skbio.test
 
 about:
   home: https://scikit-bio.org
