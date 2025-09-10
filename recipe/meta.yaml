@@ -37,6 +37,7 @@ requirements:
     - patsy >=0.5.0
     - array-api-compat >=1.3
     - llvm-openmp  # [osx]
+    - _openmp_mutex  # [linux]
 
 test:
   imports:
@@ -83,7 +84,7 @@ test:
     - python -m skbio.test
 
 about:
-  home: https://scikit-bio.org
+  home: https://scikit.bio
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
@@ -93,7 +94,7 @@ about:
     structures, algorithms, and educational resources for bioinformatics.
   doc_url: https://scikit-bio.org
   doc_source_url: https://github.com/biocore/scikit-bio/blob/master/doc/source/index.rst
-  dev_url: https://github.com/biocore/scikit-bio
+  dev_url: https://github.com/scikit-bio/scikit-bio
 
 extra:
   recipe-maintainers:
