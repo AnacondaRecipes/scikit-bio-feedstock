@@ -1,5 +1,5 @@
 {% set name = "scikit-bio" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/scikit_bio-{{ version }}.tar.gz
-  sha256: 771093ebfd154f02b9d88dcf81997737ce804e384bb3ab1cd389dfc60d566d11
+  sha256: d0a991818882c88ca47d9f6441321a440439e1a8a6716a101a931d590c395fe8
 
 build:
   # Latest array-api-compat is supported only from python 3.10
