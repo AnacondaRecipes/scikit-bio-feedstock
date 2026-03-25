@@ -95,7 +95,6 @@ about:
     scikit-bio is an open-source, BSD-licensed, python package providing data
     structures, algorithms, and educational resources for bioinformatics.
   doc_url: https://scikit-bio.org
-  doc_source_url: https://scikit.bio/docs
   dev_url: https://github.com/scikit-bio/scikit-bio
 
 extra:
