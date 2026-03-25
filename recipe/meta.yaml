@@ -1,5 +1,5 @@
 {% set name = "scikit-bio" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,9 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/scikit_bio-{{ version }}.tar.gz
-  sha256: 771093ebfd154f02b9d88dcf81997737ce804e384bb3ab1cd389dfc60d566d11
+  sha256: d0a991818882c88ca47d9f6441321a440439e1a8a6716a101a931d590c395fe8
 
 build:
-  # Latest array-api-compat is supported only from python 3.10
   skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
@@ -22,15 +21,18 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
+    - wheel
     - cython
     - numpy {{ numpy }}
   run:
     - python
+    - requests >=2.20.0
     - decorator >=3.4.2
     - natsort >=4.0.3
+    - numpy >=2
     - pandas >=1.5.0
     - scipy >=1.9.0
-    - requests >=2.20.0
     - h5py >=3.6.0
     - biom-format >=2.1.16
     - statsmodels >=0.14.0
@@ -80,7 +82,7 @@ test:
     - MPLBACKEND=Agg
   commands:
     - pip check
-    - python -c "from importlib.metadata import version as v; assert v('scikit-bio')=='{{ version }}'"
+    - python -c "from importlib.metadata import version as v; assert v('{{ name }}')=='{{ version }}'"
     - python -m skbio.test
 
 about:
@@ -93,7 +95,6 @@ about:
     scikit-bio is an open-source, BSD-licensed, python package providing data
     structures, algorithms, and educational resources for bioinformatics.
   doc_url: https://scikit-bio.org
-  doc_source_url: https://github.com/biocore/scikit-bio/blob/master/doc/source/index.rst
   dev_url: https://github.com/scikit-bio/scikit-bio
 
 extra:
