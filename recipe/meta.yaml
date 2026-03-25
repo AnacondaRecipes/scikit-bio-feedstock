@@ -76,7 +76,7 @@ test:
     - pytest
     - responses
     - matplotlib
-    - biom-format
+    - biom-format  # [py<314]
     - array-api-compat
   script_env:
     - MPLBACKEND=Agg
