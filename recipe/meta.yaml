@@ -25,6 +25,9 @@ requirements:
     - wheel
     - cython
     - numpy {{ numpy }}
+    - libgomp          # [linux]
+    - llvm-openmp {{ cxx_compiler_version }}  # [osx]
+    - vcomp14          # [win and x86_64]
   run:
     - python
     - requests >=2.20.0
